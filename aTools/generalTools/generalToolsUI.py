@@ -129,9 +129,13 @@ class GeneralTools_Gui(uiMod.BaseSubUI):
         cmds.iconTextButton(style='iconOnly',   w=self.wb, h=self.hb, image= uiMod.getImagePath("aTools"), highlightImage= uiMod.getImagePath("aTools copy"), annotation="aTools Menu")
         self.popUpaToolsMenu()
          
-        self.update = Update()
-        self.update.about = self.about
-        self.update.checkUpdates(self, mainLayout)
+        ###
+        # We don't want to perform updates. Internet access won't allow it and we want to control
+        # version releases.
+        ###
+        # self.update = Update()
+        # self.update.about = self.about
+        # self.update.checkUpdates(self, mainLayout)
      
         # set default config and startup scripts
         self.setDefaultConfig() 
